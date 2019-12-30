@@ -113,4 +113,20 @@ public class FundooPushTest {
         Assert.assertEquals("Email id already exists", message);
     }
 
+    @Test
+    public void givenUser_IfLoggedOutSuccessfully_ShouldReturn200StatusCode() throws ParseException {
+        Response response= (Response) RestAssured.given().
+                contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .headers("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDk5ZGExNGQyMjY3MDAzMjUzMGY0MCJ9LCJpYXQiOjE1Nzc3MDcxMzcsImV4cCI6MTU3Nzc5MzUzN30.VjuBfDjqM9pmc7eWHCcYTscr_gcwo9UHSeL4suSpJVM")
+                .when()
+                .post("https://fundoopush-backend-dev.bridgelabz.com/logout");
+        ResponseBody body=response.getBody();
+        JSONObject object = (JSONObject) new JSONParser().parse(body.prettyPrint());
+        int statusCode = response.getStatusCode();
+        String message = (String) object.get("message");
+        Assert.assertEquals(200, statusCode);
+        Assert.assertEquals("Logged out successfully from the system", message);
+
+    }
 }
