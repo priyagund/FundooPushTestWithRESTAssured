@@ -1,0 +1,33 @@
+{
+    "status": false,
+#    "message": "email is required"
+}
+{
+    "status": true,
+)    "message": "Logged in Successfully",
+    "data": {
++        "_id": "5e099da14d22670032530f40",
+-        "email": "priyankagund18@gmail.com",
+T        "password": "$2b$10$vEnYzWRStXSm/fhs0dmROeh.rOZuAqHlTiOACEAmnmU124kzAULIG",
+5        "creator_stamp": "2019-12-30T06:48:01.063Z",
+4        "update_stamp": "2019-12-30T11:36:36.868Z",
+        "__v": 0
+    },
+È    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDk5ZGExNGQyMjY3MDAzMjUzMGY0MCJ9LCJpYXQiOjE1Nzc3MDYzMzUsImV4cCI6MTU3Nzc5MjczNX0.JMOM1JvpCd5FNOBK267w1xQDYMauPJvilMH_Rt7zg2Q"
+}
+{
+    "status": false,
+)    "message": "Email id already exists"
+}
+{
+    "status": false,
+'    "message": "Not a registered user"
+}
+{
+    "status": false,
+)    "message": "Email id already exists"
+}
+{
+    "status": false,
+&    "message": "password is required"
+}
