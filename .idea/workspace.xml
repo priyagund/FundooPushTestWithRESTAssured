@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c67ec2c-7d6b-4620-aa58-07d12848c694" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -75,33 +74,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.FundooPushTest.givenUser_IfLoggedOutSuccessfully_ShouldReturn200StatusCode">
+  <component name="RunManager" selected="Gradle.FundooPushTest.givenUser_IfRedirect_ShouldreturnStatusCode">
     <configuration name="FundooPushTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="FundooPushTest.givenUser_IfAlreadyExit_ShouldReturn409StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfAlreadyExit_ShouldReturn409StatusCode&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -136,12 +115,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FundooPushTest.givenUser_IfNotRegister_ShouldReturn404StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn400StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfNotRegister_ShouldReturn404StatusCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn400StatusCode&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -156,12 +135,32 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FundooPushTest.givenUser_IfRegistered_ShouldReturn200StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn500StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRegistered_ShouldReturn200StatusCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn500StatusCode&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FundooPushTest.givenUser_IfRedirect_ShouldreturnStatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRedirect_ShouldreturnStatusCode&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -178,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirect_ShouldreturnStatusCode" />
+        <item itemvalue="Gradle.FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn500StatusCode" />
+        <item itemvalue="Gradle.FundooPushTest.givenUser_IfNotLoggedOut_ShouldReturn400StatusCode" />
         <item itemvalue="Gradle.FundooPushTest.givenUser_IfLoggedOutSuccessfully_ShouldReturn200StatusCode" />
         <item itemvalue="Gradle.FundooPushTest" />
-        <item itemvalue="Gradle.FundooPushTest.givenUser_IfAlreadyExit_ShouldReturn409StatusCode" />
-        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRegistered_ShouldReturn200StatusCode" />
-        <item itemvalue="Gradle.FundooPushTest.givenUser_IfNotRegister_ShouldReturn404StatusCode" />
       </list>
     </recent_temporary>
   </component>
