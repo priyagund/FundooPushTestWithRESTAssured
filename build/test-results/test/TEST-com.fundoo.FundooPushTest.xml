@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-30T13:25:27" hostname="admin142-desktop" time="1.352">
+<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-31T06:19:27" hostname="admin142-desktop" time="3.694">
   <properties/>
-  <testcase name="givenUser_IfRedirect_ShouldreturnStatusCode" classname="com.fundoo.FundooPushTest" time="1.352"/>
-  <system-out><![CDATA[Redirect Successfull...200
+  <testcase name="givenUser_IfRedirectPut_ShouldReturnStatusCode" classname="com.fundoo.FundooPushTest" time="3.694"/>
+  <system-out><![CDATA[{
+    "status": true,
+    "message": "Redirect updated Successfully",
+    "data": {
+        "n": 1,
+        "nModified": 1,
+        "ok": 1
+    }
+}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

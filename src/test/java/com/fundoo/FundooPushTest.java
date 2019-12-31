@@ -1,18 +1,14 @@
 package com.fundoo;
 
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.io.File;
 
 public class FundooPushTest {
@@ -131,7 +127,6 @@ public class FundooPushTest {
         String message = (String) object.get("message");
         Assert.assertEquals(200, statusCode);
         Assert.assertEquals("Logged out successfully from the system", message);
-
     }
 
     @Test
@@ -152,14 +147,12 @@ public class FundooPushTest {
     }
 
     @Test
-    public void givenUser_IfRedirect_ShouldreturnStatusCode()
-    {
+    public void givenUser_IfRedirectPost_Shouldreturn200StatusCode() throws ParseException {
         File TEST_FILE_PATH = new File("/home/admin142/Downloads/2019-12-12.jpg");
-
         Response response = RestAssured.given()
                 .accept(ContentType.JSON)
-                .header("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDk5ZGExNGQyMjY3MDAzMjUzMGY0MCJ9LCJpYXQiOjE1Nzc3MTEzNDAsImV4cCI6MTU3Nzc5Nzc0MH0.jjpfGS2PWUHu5vkyKkvr-SfvfBjck-RGRyir5AfRgH0")
-                .formParam("image","/home/admin142/Downloads/2019-12-12.jpg")
+                .multiPart("image",TEST_FILE_PATH)
+                .header("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NjczOTYsImV4cCI6MTU3Nzg1Mzc5Nn0.nYDtd9tVD2QCxkV5wEELXOa933jXPcILKIy4UsigHVc")
                 .formParam("title", "Democode")
                 .formParam("description", "Demo  code image for tdd presentation")
                 .formParam("redirect_link", "https://fundoopush-backend-dev.bridgelabz.com/api/#/user/login")
@@ -168,11 +161,39 @@ public class FundooPushTest {
                 .formParam("youtube_flag", false)
                 .formParam("youtube_link",false)
                 .formParam("video_link",false)
-                .multiPart(TEST_FILE_PATH)
                 .when()
                 .post("https://fundoopush-backend-dev.bridgelabz.com/redirects");
+        ResponseBody body=response.getBody();
+        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
         int statusCode = response.getStatusCode();
-        System.out.println("Redirect Successfull..." + statusCode);
-        Assert.assertEquals(200, statusCode); // response.then().
+        String message = (String) object.get("message");
+        Assert.assertEquals(201, statusCode);
+        Assert.assertEquals("Redirect added Successfully",message);
+    }
+
+    @Test
+    public void givenUser_IfRedirectPut_ShouldReturnStatusCode() throws ParseException {
+        File TEST_FILE_PATH = new File("/home/admin142/Downloads/2019-12-12.jpg");
+        Response response = RestAssured.given()
+                .accept(ContentType.JSON)
+                .multiPart("image",TEST_FILE_PATH)
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzIzNTMsImV4cCI6MTU3Nzg1ODc1M30.yMzV-a5KW9QzG0IaljjEhg7lQ09Gq2ayXvgiHNKMick")
+                .formParam("title", "Democode")
+                .formParam("_id","5e0adda14d2267003253102e")
+                .formParam("description","demo code for presenatation")
+                .formParam("redirect_link","www.google.com")
+                .formParam("is_published",false)
+                .formParam("archive", false)
+                .formParam("youtube_flag", false)
+                .formParam("youtube_link",false)
+                .formParam("video_link",false)
+                .when()
+                .put("https://fundoopush-backend-dev.bridgelabz.com/redirects");
+        ResponseBody body=response.getBody();
+        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
+        int statusCode = response.getStatusCode();
+        String message = (String) object.get("message");
+        Assert.assertEquals(200, statusCode);
+        Assert.assertEquals("Redirect updated Successfully",message);
     }
 }

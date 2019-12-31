@@ -1,1 +1,9 @@
-Redirect Successfull...200
+{
+    "status": true,
+0    "message": "Redirect updated Successfully",
+    "data": {
+        "n": 1,
+        "nModified": 1,
+        "ok": 1
+    }
+}
