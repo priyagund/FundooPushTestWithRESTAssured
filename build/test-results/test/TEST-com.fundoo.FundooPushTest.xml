@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-31T06:19:27" hostname="admin142-desktop" time="3.694">
+<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-31T06:39:11" hostname="admin142-desktop" time="4.926">
   <properties/>
-  <testcase name="givenUser_IfRedirectPut_ShouldReturnStatusCode" classname="com.fundoo.FundooPushTest" time="3.694"/>
+  <testcase name="givenUser_IfRedirectPut_ShouldReturn200StatusCode" classname="com.fundoo.FundooPushTest" time="4.926"/>
   <system-out><![CDATA[{
     "status": true,
     "message": "Redirect updated Successfully",

@@ -172,7 +172,32 @@ public class FundooPushTest {
     }
 
     @Test
-    public void givenUser_IfRedirectPut_ShouldReturnStatusCode() throws ParseException {
+    public void IfRedirectPost_IfTokenIncorect_Shouldreturn401StatusCode() throws ParseException {
+        File TEST_FILE_PATH = new File("/home/admin142/Downloads/2019-12-12.jpg");
+        Response response = RestAssured.given()
+                .accept(ContentType.JSON)
+                .multiPart("image",TEST_FILE_PATH)
+                .header("token", "IsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NjczOTYsImV4cCI6MTU3Nzg1Mzc5Nn0.nYDtd9tVD2QCxkV5wEELXOa933jXPcILKIy4UsigHVc")
+                .formParam("title", "Democode")
+                .formParam("description", "Demo  code image for tdd presentation")
+                .formParam("redirect_link", "https://fundoopush-backend-dev.bridgelabz.com/api/#/user/login")
+                .formParam("is_published",false)
+                .formParam("archive", false)
+                .formParam("youtube_flag", false)
+                .formParam("youtube_link",false)
+                .formParam("video_link",false)
+                .when()
+                .post("https://fundoopush-backend-dev.bridgelabz.com/redirects");
+        ResponseBody body=response.getBody();
+        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
+        int statusCode = response.getStatusCode();
+        String message = (String) object.get("message");
+        Assert.assertEquals(401, statusCode);
+        Assert.assertEquals("Unauthorised Login",message);
+    }
+
+    @Test
+    public void givenUser_IfRedirectPut_ShouldReturn200StatusCode() throws ParseException {
         File TEST_FILE_PATH = new File("/home/admin142/Downloads/2019-12-12.jpg");
         Response response = RestAssured.given()
                 .accept(ContentType.JSON)
@@ -196,4 +221,45 @@ public class FundooPushTest {
         Assert.assertEquals(200, statusCode);
         Assert.assertEquals("Redirect updated Successfully",message);
     }
+
+    @Test
+    public void IfImageRedirectPut_IfIdIncorrect_ShouldReturnStatusCode() throws ParseException {
+        File TEST_FILE_PATH = new File("/home/admin142/Downloads/2019-12-12.jpg");
+        Response response = RestAssured.given()
+                .accept(ContentType.JSON)
+                .multiPart("image",TEST_FILE_PATH)
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzIzNTMsImV4cCI6MTU3Nzg1ODc1M30.yMzV-a5KW9QzG0IaljjEhg7lQ09Gq2ayXvgiHNKMick")
+                .formParam("title", "Democode")
+                .formParam("_id","5e0adda14d226700")
+                .formParam("description","demo code for presenatation")
+                .formParam("redirect_link","www.google.com")
+                .formParam("is_published",false)
+                .formParam("archive", false)
+                .formParam("youtube_flag", false)
+                .formParam("youtube_link",false)
+                .formParam("video_link",false)
+                .when()
+                .put("https://fundoopush-backend-dev.bridgelabz.com/redirects");
+        ResponseBody body=response.getBody();
+        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
+        int statusCode = response.getStatusCode();
+        String message = (String) object.get("message");
+        Assert.assertEquals(500, statusCode);
+        Assert.assertEquals("Something went wrong",message);
+    }
+
+    @Test
+    public void givenUser_IfRedirectGet_ShouldReturnStatusCode() throws ParseException {
+        Response response = (Response) RestAssured.given()
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzQ0NjIsImV4cCI6MTU3Nzg2MDg2Mn0.JzDPSBpks9fazyUPsO-1nwQoFyEGxIzuMvNNLFpdgfA")
+                .when()
+                .get("https://fundoopush-backend-dev.bridgelabz.com/redirects");
+       ResponseBody body=response.getBody();
+       JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
+       int statusCode=response.getStatusCode();
+       String message= (String) object.get("message");
+       Assert.assertEquals("200",statusCode);
+       Assert.assertEquals("All Redirects retrieved Successfully",message);
+    }
+
 }
