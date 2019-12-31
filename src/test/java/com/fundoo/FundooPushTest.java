@@ -152,7 +152,7 @@ public class FundooPushTest {
         Response response = RestAssured.given()
                 .accept(ContentType.JSON)
                 .multiPart("image",TEST_FILE_PATH)
-                .header("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NjczOTYsImV4cCI6MTU3Nzg1Mzc5Nn0.nYDtd9tVD2QCxkV5wEELXOa933jXPcILKIy4UsigHVc")
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzU2OTksImV4cCI6MTU3Nzg2MjA5OX0.X9rcy7q4JTGGkN0CsfkqexeepzFhRUxSmtn-ybp7bOk")
                 .formParam("title", "Democode")
                 .formParam("description", "Demo  code image for tdd presentation")
                 .formParam("redirect_link", "https://fundoopush-backend-dev.bridgelabz.com/api/#/user/login")
@@ -249,17 +249,34 @@ public class FundooPushTest {
     }
 
     @Test
-    public void givenUser_IfRedirectGet_ShouldReturnStatusCode() throws ParseException {
-        Response response = (Response) RestAssured.given()
-                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzQ0NjIsImV4cCI6MTU3Nzg2MDg2Mn0.JzDPSBpks9fazyUPsO-1nwQoFyEGxIzuMvNNLFpdgfA")
+    public void givenUser_IfRedirectGet_ShouldReturn200StatusCode() throws ParseException {
+        Response response = RestAssured.given()
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzU2OTksImV4cCI6MTU3Nzg2MjA5OX0.X9rcy7q4JTGGkN0CsfkqexeepzFhRUxSmtn-ybp7bOk")
                 .when()
                 .get("https://fundoopush-backend-dev.bridgelabz.com/redirects");
        ResponseBody body=response.getBody();
        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
        int statusCode=response.getStatusCode();
        String message= (String) object.get("message");
-       Assert.assertEquals("200",statusCode);
+       Assert.assertEquals(200,statusCode);
        Assert.assertEquals("All Redirects retrieved Successfully",message);
+    }
+
+    @Test
+    public void givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode() throws ParseException {
+        Response response = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjVlMDllMmUxNGQyMjY3MDAzMjUzMGZkOCJ9LCJpYXQiOjE1Nzc3NzY0NTMsImV4cCI6MTU3Nzg2Mjg1M30.8HNtHM-HsWoFWOCPhNv65sSymQhVyNZGM4vNi_WBYbQ")
+                .body("{\"_id\":\"5c128ce5a8e1bc779f20b430\"}")
+                .when()
+                .post("https://fundoopush-backend-dev.bridgelabz.com/redirects/delete");
+        ResponseBody body=response.getBody();
+        JSONObject object= (JSONObject) new JSONParser().parse(body.prettyPrint());
+        int statusCode=response.getStatusCode();
+        String message= (String) object.get("message");
+        Assert.assertEquals(200,statusCode);
+        Assert.assertEquals("Redirect deleted Successfully",message);
     }
 
 }

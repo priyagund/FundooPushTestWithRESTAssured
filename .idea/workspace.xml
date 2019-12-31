@@ -72,13 +72,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.FundooPushTest.givenUser_IfRedirectGet_ShouldReturnStatusCode">
-    <configuration name="FundooPushTest.IfImageRedirectPut_IfIdIncorrect_ShouldReturnStatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FundooPushTest.givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode">
+    <configuration name="FundooPushTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.IfImageRedirectPut_IfIdIncorrect_ShouldReturnStatusCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -113,6 +113,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="FundooPushTest.givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="FundooPushTest.givenUser_IfRedirectGet_ShouldReturnStatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -133,32 +153,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FundooPushTest.givenUser_IfRedirectPut_ShouldReturn200StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FundooPushTest.givenUser_IfRedirectPost_Shouldreturn200StatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRedirectPut_ShouldReturn200StatusCode&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="FundooPushTest.givenUser_IfRedirectPut_ShouldReturnStatusCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRedirectPut_ShouldReturnStatusCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.fundoo.FundooPushTest.givenUser_IfRedirectPost_Shouldreturn200StatusCode&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -175,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode" />
         <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirectGet_ShouldReturnStatusCode" />
-        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirectPut_ShouldReturn200StatusCode" />
+        <item itemvalue="Gradle.FundooPushTest" />
+        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirectPost_Shouldreturn200StatusCode" />
         <item itemvalue="Gradle.FundooPushTest.IfRedirectPost_IfTokenIncorect_Shouldreturn401StatusCode" />
-        <item itemvalue="Gradle.FundooPushTest.IfImageRedirectPut_IfIdIncorrect_ShouldReturnStatusCode" />
-        <item itemvalue="Gradle.FundooPushTest.givenUser_IfRedirectPut_ShouldReturnStatusCode" />
       </list>
     </recent_temporary>
   </component>
@@ -201,15 +201,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FandooPush$FundooPushTest.ic" NAME="FundooPushTest Coverage Results" MODIFIED="1577701911378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/FandooPush$FundooPushTest.ic" NAME="FundooPushTest Coverage Results" MODIFIED="1577775385460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

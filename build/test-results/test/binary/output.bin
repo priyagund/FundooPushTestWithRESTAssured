@@ -1,9 +1,9 @@
 {
     "status": true,
-0    "message": "Redirect updated Successfully",
+0    "message": "Redirect deleted Successfully",
     "data": {
-        "n": 1,
-        "nModified": 1,
+        "n": 0,
+        "nModified": 0,
         "ok": 1
     }
 }
