@@ -1,9 +1,21 @@
 {
     "status": true,
-0    "message": "Redirect deleted Successfully",
+*    "message": "Jobs added successfully",
     "data": {
-        "n": 0,
-        "nModified": 0,
-        "ok": 1
+        "jobsData": {
+/            "_id": "5e0b525cf24f8605182dea53",
+7            "redirect_id": "5e0b4281fe754c00321c8631",
+(            "years_of_experience": "1",
+            "salary": "3.6",
+"            "location": "Mumbai",
++            "company_profile": "Ideation",
+            "hashtag": [
+                
+            ],
+9            "creator_stamp": "2019-12-31T13:51:24.409Z",
+8            "update_stamp": "2019-12-31T13:51:24.409Z",
+            "__v": 0
+
+        }
     }
 }

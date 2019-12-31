@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-31T08:32:02" hostname="admin142-desktop" time="0.96">
+<testsuite name="com.fundoo.FundooPushTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-31T13:51:22" hostname="admin142-desktop" time="2.144">
   <properties/>
-  <testcase name="givenUser_IfRedirectDeleteImage_ShouldReturnStatusCode" classname="com.fundoo.FundooPushTest" time="0.96"/>
+  <testcase name="givenUser_JobAdded_ShouldReturnCorrectStatusCode" classname="com.fundoo.FundooPushTest" time="2.144"/>
   <system-out><![CDATA[{
     "status": true,
-    "message": "Redirect deleted Successfully",
+    "message": "Jobs added successfully",
     "data": {
-        "n": 0,
-        "nModified": 0,
-        "ok": 1
+        "jobsData": {
+            "_id": "5e0b525cf24f8605182dea53",
+            "redirect_id": "5e0b4281fe754c00321c8631",
+            "years_of_experience": "1",
+            "salary": "3.6",
+            "location": "Mumbai",
+            "company_profile": "Ideation",
+            "hashtag": [
+                
+            ],
+            "creator_stamp": "2019-12-31T13:51:24.409Z",
+            "update_stamp": "2019-12-31T13:51:24.409Z",
+            "__v": 0
+        }
     }
 }
 ]]></system-out>
